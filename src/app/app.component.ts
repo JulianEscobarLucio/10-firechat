@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { ChatService } from './providers/chat.service';
+
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +11,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'firechat';
+
+  chats: Observable<any[]>;
+
+  constructor(public chatService: ChatService) {
+    
+  }
+
 }
